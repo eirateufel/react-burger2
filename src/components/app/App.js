@@ -3,6 +3,7 @@ import AppHeader from '../appHeader/appHeader';
 import BurgerConstructor from '../burgerConstructor/burgerConstructor'; 
 import BurgerIngredience from '../burgerIngredients/burgerIngredience';
 import apiSrc from '../apiSrc/apiSrc';
+import {checkReponse} from '../api/api'
 
 import appStyles from './app.module.css';
 
@@ -19,7 +20,7 @@ function App() {
 
   useEffect(() => {
     fetch(apiSrc)
-      .then(response => response.json())
+      .then(checkReponse)
       .then(data => {
         if (data.success) {
           const buns = data.data.filter((element) => element.type === "bun");
