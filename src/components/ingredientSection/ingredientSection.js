@@ -38,7 +38,7 @@ export default function IngredientSection(props) {
                 )
             })
         )
-    }, [])
+    }, [props.ingredients])
 
     return (
         <div className={ingredientSectionStyles.mainSection}>
