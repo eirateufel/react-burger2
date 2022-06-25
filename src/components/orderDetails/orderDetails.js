@@ -4,7 +4,7 @@ import orderDetailsStyles from './orderDetails.module.css';
 import orderReadyImage from '../../images/order-ready.svg'
 
 OrderDetails.propTypes = {
-    orderNumber: PropTypes.string
+    orderNumber: PropTypes.string.isRequired
 }
 
 export default function OrderDetails(props) {

@@ -1,44 +1,13 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import {ConstructorElement, DragIcon, CurrencyIcon, Button} from '@ya.praktikum/react-developer-burger-ui-components';
 import burgerIngredienceStyles from './burgerIngredience.module.css';
 import Modal from '../modal/modal';
 import OrderDetails from '../orderDetails/orderDetails';
+import {ingredientGroupsPropTypes} from '../propTypes/propTypes';
 
 BurgerIngredience.propTypes = {
-    ingredients: PropTypes.shape({
-        buns: PropTypes.arrayOf(PropTypes.shape({
-            image: PropTypes.string,
-            image_large: PropTypes.string,
-            name: PropTypes.string,
-            price: PropTypes.number,
-            calories: PropTypes.number,
-            carbohydrates: PropTypes.number,
-            fat: PropTypes.number,
-            proteins: PropTypes.number,
-        })),
-        mains: PropTypes.arrayOf(PropTypes.shape({
-            image: PropTypes.string,
-            image_large: PropTypes.string,
-            name: PropTypes.string,
-            price: PropTypes.number,
-            calories: PropTypes.number,
-            carbohydrates: PropTypes.number,
-            fat: PropTypes.number,
-            proteins: PropTypes.number,
-        })),
-        sauces: PropTypes.arrayOf(PropTypes.shape({
-            image: PropTypes.string,
-            image_large: PropTypes.string,
-            name: PropTypes.string,
-            price: PropTypes.number,
-            calories: PropTypes.number,
-            carbohydrates: PropTypes.number,
-            fat: PropTypes.number,
-            proteins: PropTypes.number,
-        }))
-    })
-}
+    ingredients: ingredientGroupsPropTypes // isRequired внутри модуля propTypes
+};
 
 export default function BurgerIngredience({ingredients}) {
     const [burgerWrapper, setBurgerWrapper] = React.useState();

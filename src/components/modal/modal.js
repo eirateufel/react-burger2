@@ -7,8 +7,8 @@ import modalStyles from './modal.module.css';
 
 Modal.propTypes = {
     modalHeader: PropTypes.string,
-    unmountModal: PropTypes.func,
-    children: PropTypes.element
+    unmountModal: PropTypes.func.isRequired,
+    children: PropTypes.element.isRequired
 }
 
 const modalRoot = document.getElementById("root");

@@ -3,9 +3,9 @@ import { BurgerIcon, ListIcon, ProfileIcon } from '@ya.praktikum/react-developer
 import buttonStyles from './buttonWithIcon.module.css';
 
 ButtonWithIcon.propTypes = {
-    iconType: PropTypes.oneOf(["BurgerIcon", "ListIcon", "ProfileIcon"]),
-    buttonType: PropTypes.oneOf(["primary", "secondary"]),
-    text: PropTypes.string
+    iconType: PropTypes.oneOf(["BurgerIcon", "ListIcon", "ProfileIcon"]).isRequired,
+    buttonType: PropTypes.oneOf(["primary", "secondary"]).isRequired,
+    text: PropTypes.string.isRequired
 }
 
 export default function ButtonWithIcon(props) {

@@ -2,19 +2,11 @@ import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import IngredientCard from '../ingredientCard/ingredientCard';
 import ingredientSectionStyles from './ingredientSection.module.css'
+import {ingredientsPropTypes} from '../propTypes/propTypes';
 
 IngredientSection.propTypes = {
-    ingredients: PropTypes.arrayOf(PropTypes.shape({
-        image: PropTypes.string,
-        image_large: PropTypes.string,
-        name: PropTypes.string,
-        price: PropTypes.number,
-        calories: PropTypes.number,
-        carbohydrates: PropTypes.number,
-        fat: PropTypes.number,
-        proteins: PropTypes.number,
-    })),
-    header: PropTypes.string
+    ingredients: ingredientsPropTypes, // isRequired внутри модуля propTypes
+    header: PropTypes.string.isRequired
 }
 
 export default function IngredientSection(props) {

@@ -1,42 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import constructorStyles from './burgerConstructor.module.css';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import IngredientSection from '../ingredientSection/ingredientSection';
+import {ingredientGroupsPropTypes} from '../propTypes/propTypes';
 
 BurgerConstructor.propTypes = {
-    ingredients: PropTypes.shape({
-        buns: PropTypes.arrayOf(PropTypes.shape({
-            image: PropTypes.string,
-            image_large: PropTypes.string,
-            name: PropTypes.string,
-            price: PropTypes.number,
-            calories: PropTypes.number,
-            carbohydrates: PropTypes.number,
-            fat: PropTypes.number,
-            proteins: PropTypes.number,
-        })),
-        mains: PropTypes.arrayOf(PropTypes.shape({
-            image: PropTypes.string,
-            image_large: PropTypes.string,
-            name: PropTypes.string,
-            price: PropTypes.number,
-            calories: PropTypes.number,
-            carbohydrates: PropTypes.number,
-            fat: PropTypes.number,
-            proteins: PropTypes.number,
-        })),
-        sauces: PropTypes.arrayOf(PropTypes.shape({
-            image: PropTypes.string,
-            image_large: PropTypes.string,
-            name: PropTypes.string,
-            price: PropTypes.number,
-            calories: PropTypes.number,
-            carbohydrates: PropTypes.number,
-            fat: PropTypes.number,
-            proteins: PropTypes.number,
-        }))
-    })
+    ingredients: ingredientGroupsPropTypes // isRequired внутри модуля propTypes
 }
 
 export default function BurgerConstructor({ingredients}) {

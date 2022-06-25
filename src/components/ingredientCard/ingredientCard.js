@@ -4,18 +4,9 @@ import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-c
 import ingredientCardStyles from './ingredientCard.module.css';
 import Modal from '../modal/modal';
 import IngredientDetails from '../ingredientDetails/ingredientDetails';
+import {fullIngredientDetailsPropTypes} from '../propTypes/propTypes';
 
-
-IngredientCard.propTypes = {
-    imgSrc: PropTypes.string,
-    imgSrcLarge: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    calories: PropTypes.number,
-    carbohydrates: PropTypes.number,
-    fat: PropTypes.number,
-    proteins: PropTypes.number,
-}
+IngredientCard.propTypes = fullIngredientDetailsPropTypes; // isRequired внутри модуля propTypes
 
 export default function IngredientCard(props) {
     const [modalMounted, setModalMountedState] = React.useState(false)

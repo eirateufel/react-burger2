@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import nutrientStyles from './nutrient.module.css';
 
 Nutrient.propTypes = {
-    name: PropTypes.string,
-    number: PropTypes.number
+    name: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired
 }
 
 export default function Nutrient(props) {

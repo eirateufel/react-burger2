@@ -1,15 +1,9 @@
 import PropTypes from 'prop-types';
 import Nutrient from '../nutrient/nutrient';
 import ingredientDetailsStyles from './ingredientDetails.module.css';
+import {ingredientDetailsPropTypes} from '../propTypes/propTypes';
 
-IngredientDetails.propTypes = {
-    imgSrc: PropTypes.string,
-    name: PropTypes.string,
-    calories: PropTypes.number,
-    carbohydrates: PropTypes.number,
-    fat: PropTypes.number,
-    proteins: PropTypes.number,
-}
+IngredientDetails.propTypes = ingredientDetailsPropTypes; // isRequired внутри модуля propTypes
 
 export default function IngredientDetails(props) {
     
