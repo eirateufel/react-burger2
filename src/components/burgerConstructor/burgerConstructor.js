@@ -9,15 +9,15 @@ BurgerConstructor.propTypes = {
 }
 
 export default function BurgerConstructor({ingredients}) {
-    const [currentTab, setCurrent] = React.useState('one');
+    const [currentTab, setCurrent] = React.useState('buns');
 
     return (
         <div className={constructorStyles.mainSection}>
             <h2 className={`text text_type_main-large mt-10 mb-5 ${constructorStyles.header}`}>Соберите бургер</h2>
             <div className={`mb-10 ${constructorStyles.tabSection}`} style={{ display: 'flex' }}>
-                <Tab value="one" active={currentTab === 'one'} onClick={setCurrent}>Булки</Tab>
-                <Tab value="two" active={currentTab === 'two'} onClick={setCurrent}>Начинки</Tab>
-                <Tab value="three" active={currentTab === 'three'} onClick={setCurrent}>Соусы</Tab>
+                <Tab value="buns" active={currentTab === 'buns'} onClick={setCurrent}>Булки</Tab>
+                <Tab value="middles" active={currentTab === 'middles'} onClick={setCurrent}>Начинки</Tab>
+                <Tab value="sauces" active={currentTab === 'sauces'} onClick={setCurrent}>Соусы</Tab>
             </div>
             <div className={constructorStyles.scrollSection}>
                 {
