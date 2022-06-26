@@ -29,13 +29,9 @@ export default function Modal(props) {
     }, [unmountModalFunc]);
 
     return ReactDOM.createPortal(
-        /* Можно было бы решить проблему вынеся непостедственно саму модалку из оверлея,
-            не оборачивая её, но тогда нужно будет абсолютно позиционировать отдельно и модальное окно,
-            и оверлей, а в варианте со e.stopPropagation() нужно позиционировать только оверлей,
-            так что я попробовала оба варианта и выбрала e.stopPropagation()
-        */
-        <ModalOverlay unmountModal={props.unmountModal}>
-            <div className={`pt-10 pr-10 pb-15 pl-10 ${modalStyles.modalBody}`} onClick={e => {e.stopPropagation()}}> 
+        <div className={modalStyles.modalContainer}>
+            <ModalOverlay unmountModal={props.unmountModal}/>
+            <div className={`pt-10 pr-10 pb-15 pl-10 ${modalStyles.modalBody}`}> 
                 <div className={modalStyles.modalHeader}>
                     <p className="text text_type_main-large">
                         {props.modalHeader}
@@ -48,7 +44,8 @@ export default function Modal(props) {
                     {props.children}
                 </div>
             </div>
-        </ModalOverlay>,
+        </div>
+        ,
         modalRoot
     )
 }
